@@ -1,14 +1,9 @@
-from dataclasses import fields
 from django.views.generic import CreateView, DeleteView, UpdateView
-from telnetlib import DO
 from django.shortcuts import render, redirect
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-
-# Add the following import
-from django.http import HttpResponse
 
 # Models
 from .models import Document
