@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="doccontainer">
+	{% for doc in docs %}
+	<a href="{% url 'detail' doc.id%}">
+		<div class="doc">
+			<p>{{doc.name}}</p>
+		</div>
+	</a>
+	{% endfor %}
+</div>
+
+{% endblock content %}

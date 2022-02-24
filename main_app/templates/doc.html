@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="action">
+	<a href="{% url 'doc_update' doc.id %}">Edit</a>
+	<a href="{% url 'doc_delete' doc.id %}">Delete</a>
+</div>
+
+<p>{{doc.name}}</p>
+<p>{{doc.url}}</p>
+<p>{{doc.description}}</p>
+{% endblock content %}
