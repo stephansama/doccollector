@@ -1,11 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="action">
-	<a href="{% url 'doc_update' doc.id %}">Edit</a>
-	<a href="{% url 'doc_delete' doc.id %}">Delete</a>
-</div>
+<ul class="list-unstyled d-flex"></ul>
 
-<p>{{doc.name}}</p>
-<p>{{doc.url}}</p>
-<p>{{doc.description}}</p>
+<div class="w-100 d-flex justify-content-center">
+	<div class="card w-50">
+		<img class="card-img-top" src="holder.js/100x180/" alt="" />
+		<div class="card-body">
+			<h4 class="card-title">
+				<img
+					src="https://www.google.com/s2/favicons?domain={{doc.url}}"
+					width="20px"
+				/>
+				{{doc.name}}
+			</h4>
+			<a target="_blank" href="{{doc.url}}">{{doc.url}}</a>
+			<p class="card-text">{{doc.description}}</p>
+			<a class="btn-primary btn" href="{% url 'doc_update' doc.id %}">Edit</a>
+			<a class="btn-primary btn" href="{% url 'doc_delete' doc.id %}">Delete</a>
+		</div>
+	</div>
+</div>
 {% endblock content %}

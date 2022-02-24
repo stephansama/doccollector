@@ -1,7 +1,14 @@
 {% extends 'base.html' %} {% block content %}
-<form method="post" action="{% url 'signup' %}">
-	{% csrf_token %} {{ form.as_p }}
-	<input type="submit" class="btn" value="login" />
-	<input type="hidden" name="next" value="{{ next }}" />
-</form>
+<div class="d-flex align-items-center flex-column">
+	<h3 class="display-3">Sign Up</h3>
+	<form
+		method="post"
+		action="{% url 'signup' %}"
+		class="d-flex flex-column align-items-start"
+	>
+		{% csrf_token %} {{ form.as_p }}
+		<input type="submit" class="btn btn-primary mx-auto" value="login" />
+		<input type="hidden" name="next" value="{{ next }}" />
+	</form>
+</div>
 {% endblock content %}

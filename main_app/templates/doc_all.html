@@ -1,10 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="doccontainer">
+<div class="d-flex justify-content-center w-100">
 	{% for doc in docs %}
-	<a href="{% url 'detail' doc.id%}">
-		<div class="doc">
-			<p>{{doc.name}}</p>
+	<a class="text-decoration-none text-black" href="{% url 'detail' doc.id%}">
+		<div class="card mx-2">
+			<div class="card-body">
+				<h4 class="card-title">
+					<img
+						src="https://www.google.com/s2/favicons?domain={{doc.url}}"
+						width="20px"
+					/>
+					{{doc.name}}
+				</h4>
+				<p class="card-text">{{doc.description}}</p>
+			</div>
 		</div>
 	</a>
 	{% endfor %}

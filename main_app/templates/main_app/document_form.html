@@ -1,14 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-<form
-	action=""
-	method="post"
-	style="display: flex; justify-content: center; align-items: center"
->
+<form action="" method="post" class="d-flex justify-content-center">
 	{% csrf_token %}
 	<table>
 		{{form.as_table}}
 	</table>
-	<input type="submit" value="ADD" />
+	<input class="btn btn-primary m-1" type="submit" value="ADD INFORMATION" />
 </form>
 
 {% endblock %}
